@@ -225,7 +225,7 @@ packages:
     source: hosted
     version: "4.2.0"
   maplibre_gl:
-    dependency: "direct main"
+    dependency: "direct overridden"
     description:
       path: ".."
       relative: true
