@@ -8,14 +8,14 @@ dependencies:
     sdk: flutter
   maplibre_gl_platform_interface:
     git:
-      url: https://github.com/maplibre/flutter-maplibre-gl.git
+      url: https://github.com/ManoyloK/flutter-maplibre-gl.git
+      ref: 0.18.0
       path: maplibre_gl_platform_interface
-      ref: main
   maplibre_gl_web:
     git:
-      url: https://github.com/maplibre/flutter-maplibre-gl.git
+      url: https://github.com/ManoyloK/flutter-maplibre-gl.git
+      ref: 0.18.0
       path: maplibre_gl_web
-      ref: main
 
 dependency_overrides:
   maplibre_gl_platform_interface:
