@@ -1754,14 +1754,17 @@ final class MapboxMapController
     if (mapView == null) {
       return;
     }
-    mapViewContainer.removeView(mapView);
-    mapView.onStop();
-    mapView.onDestroy();
+
+    stopListeningForLocationUpdates();
 
     if (locationComponent != null) {
       locationComponent.setLocationComponentEnabled(false);
     }
-    stopListeningForLocationUpdates();
+
+    mapView.onStop();
+    mapView.onDestroy();
+
+    mapViewContainer.removeView(mapView);
 
     mapView = null;
   }
@@ -1979,6 +1982,10 @@ final class MapboxMapController
   }
 
   private void updateMyLocationEnabled() {
+    if(MapboxMapController.this.style == null) {
+      return;
+    }
+
     if (this.locationComponent == null && myLocationEnabled) {
       enableLocationComponent(mapboxMap.getStyle());
     }
