@@ -1771,15 +1771,16 @@ final class MapLibreMapController
       return;
     }
 
+    stopListeningForLocationUpdates();
+
     if (locationComponent != null) {
       locationComponent.setLocationComponentEnabled(false);
     }
-    stopListeningForLocationUpdates();
-
-    mapViewContainer.removeView(mapView);
 
     mapView.onStop();
     mapView.onDestroy();
+
+    mapViewContainer.removeView(mapView);
 
     mapView = null;
   }
