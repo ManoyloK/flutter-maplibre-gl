@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 package org.maplibre.maplibregl
 
-import org.maplibre.android.geometry.LatLngBounds
+import com.mapbox.mapboxsdk.geometry.LatLngBounds
 
 /** Receiver of MapLibreMap configuration options.  */
 internal interface MapLibreMapOptionsSink {

@@ -1,6 +1,6 @@
 package org.maplibre.maplibregl;
 
-import org.maplibre.android.module.http.HttpRequestUtil;
+import com.mapbox.mapboxsdk.module.http.HttpRequestUtil;
 import io.flutter.plugin.common.MethodChannel;
 import java.util.Map;
 import okhttp3.OkHttpClient;

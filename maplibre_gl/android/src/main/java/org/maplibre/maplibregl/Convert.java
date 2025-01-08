@@ -7,13 +7,15 @@ package org.maplibre.maplibregl;
 import android.content.Context;
 import android.graphics.Point;
 import android.util.DisplayMetrics;
-import org.maplibre.geojson.Polygon;
-import org.maplibre.android.camera.CameraPosition;
-import org.maplibre.android.camera.CameraUpdate;
-import org.maplibre.android.camera.CameraUpdateFactory;
-import org.maplibre.android.geometry.LatLng;
-import org.maplibre.android.geometry.LatLngBounds;
-import org.maplibre.android.maps.MapLibreMap;
+
+
+import com.mapbox.geojson.Polygon;
+import com.mapbox.mapboxsdk.camera.CameraPosition;
+import com.mapbox.mapboxsdk.camera.CameraUpdate;
+import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
+import com.mapbox.mapboxsdk.geometry.LatLng;
+import com.mapbox.mapboxsdk.geometry.LatLngBounds;
+import com.mapbox.mapboxsdk.maps.MapboxMap;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -43,7 +45,7 @@ class Convert {
     return toString(toList(o).get(0)).equals("scrollBy");
   }
 
-  static CameraUpdate toCameraUpdate(Object o, MapLibreMap maplibreMap, float density) {
+  static CameraUpdate toCameraUpdate(Object o, MapboxMap maplibreMap, float density) {
     final List<?> data = toList(o);
     switch (toString(data.get(0))) {
       case "newCameraPosition":
@@ -164,12 +166,12 @@ class Convert {
   }
 
   static Polygon interpretListLatLng(List<List<LatLng>> geometry) {
-    List<List<org.maplibre.geojson.Point>> points = new ArrayList<>(geometry.size());
+    List<List<com.mapbox.geojson.Point>> points = new ArrayList<>(geometry.size());
     for (List<LatLng> innerGeometry : geometry) {
-      List<org.maplibre.geojson.Point> innerPoints = new ArrayList<>(innerGeometry.size());
+      List<com.mapbox.geojson.Point> innerPoints = new ArrayList<>(innerGeometry.size());
       for (LatLng latLng : innerGeometry) {
         innerPoints.add(
-            org.maplibre.geojson.Point.fromLngLat(latLng.getLongitude(), latLng.getLatitude()));
+                com.mapbox.geojson.Point.fromLngLat(latLng.getLongitude(), latLng.getLatitude()));
       }
       points.add(innerPoints);
     }

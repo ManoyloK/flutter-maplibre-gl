@@ -3,6 +3,7 @@ description: Web platform implementation of maplibre_gl. This package is only in
 version: 0.20.0
 repository: https://github.com/maplibre/flutter-maplibre-gl
 issue_tracker: https://github.com/maplibre/flutter-maplibre-gl/issues
+publish_to: none
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -22,7 +23,11 @@ dependencies:
     sdk: flutter
   image: ^4.0.17
   js: ">=0.6.7 <0.8.0"
-  maplibre_gl_platform_interface: ^0.20.0
+  maplibre_gl_platform_interface:
+    git:
+      url: https://github.com/ManoyloK/flutter-maplibre-gl.git
+      ref: upgrade-map-libre-SDK
+      path: maplibre_gl_platform_interface
   meta: ^1.3.0
 
 dev_dependencies:

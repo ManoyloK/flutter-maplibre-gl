@@ -1,13 +1,13 @@
 name: maplibre_gl_example
 description: Demonstrates how to use the maplibre_gl plugin.
-publish_to: 'none'
+publish_to: "none"
 version: 1.0.0+1
 repository: https://github.com/maplibre/flutter-maplibre-gl
 issue_tracker: https://github.com/maplibre/flutter-maplibre-gl/issues
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
-  flutter: '>=3.10.0'
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
 
 dependencies:
   collection: ^1.17.1
@@ -23,6 +23,13 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   very_good_analysis: ^5.0.0
+
+dependency_overrides:
+  maplibre_gl:
+    git:
+      url: https://github.com/ManoyloK/flutter-maplibre-gl.git
+      ref: upgrade-map-libre-SDK
+      path: maplibre_gl
 
 flutter:
   uses-material-design: true
